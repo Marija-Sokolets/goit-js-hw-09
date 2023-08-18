@@ -60,13 +60,7 @@ startBtn.addEventListener('click', startTimer);
 
 function startTimer() {
   const selectedDate = inputDate._flatpickr.selectedDates[0].getTime();
-  // const currentDate = Date.now();
-
-  // if (selectedDate <= currentDate) {
-  //   Notiflix.Notify.failure('Оберіть майбутню дату від поточної');
-  //   return;
-  // }
-
+ 
   startBtn.disabled = true;
 
   const coutdownInternal = setInterval(() => {
@@ -95,22 +89,6 @@ function updateTimer(ms) {
   minutes.textContent = addLeadingZero(minutesValue);
   seconds.textContent = addLeadingZero(secondsValue);
 }
-
-// const options = {
-//     enableTime: true,
-//     time_24hr: true,
-//     defaultDate: new Date(),
-//     minuteIncrement: 1,
-//         onClose(selectedDates) {
-//         if((selectedDates[0]).getTime() < Date.now()){
-//             Notiflix.Report.warning("Please choose a date in the future");
-//             makeDisableButton();
-//              return;
-//         }
-//         makeAbleButton();
-//         Notiflix.Notify.success("Well done");
-//     },
-// };
 
 console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
 console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
